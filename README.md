@@ -1,6 +1,20 @@
 # Dart Bootstrap Datepicker
 
-Bootstrap Date picker for Angular Dart developers.
+Bootstrap Datepicker for Angular Dart developers.
+
+## How to view examples
+
+___For macOS___
+
+Run ```serve_example.sh```
+
+Open your favorite web browser and navigate to <http://localhost:8080/>.
+
+___For Windows___
+
+Run ```serve_example.bat```
+
+Open your favorite web browser and navigate to <http://localhost:8080/>.
 
 ## Features and bugs
 
