@@ -2,6 +2,12 @@
 
 Bootstrap Datepicker for Angular Dart developers.
 
+## Prerequisites ##
+
+To run this package, the Dart SDK is required.
+
+Download Dart SDK from <https://www.dartlang.org/tools/sdk>.
+
 ## How to view examples
 
 ___For macOS___
