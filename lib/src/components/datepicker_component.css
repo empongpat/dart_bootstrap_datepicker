@@ -1,0 +1,62 @@
+.datepicker {
+  height: 250px;
+  width: 250px;
+  z-index: 999;
+  position: absolute;
+  top: 35px;
+  background-color: white;
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(50, 50, 50, 0.3);
+  -moz-box-shadow:    0px 5px 15px 0px rgba(50, 50, 50, 0.3);
+  box-shadow:         0px 5px 15px 0px rgba(50, 50, 50, 0.3);
+}
+
+.hide {
+  display: none;
+}
+
+.toggle-datepicker:focus {
+  outline: none;
+}
+
+.datepicker > .row:first-child {
+  padding-top: 5px;
+  margin: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.datepicker > .row:first-child > div {
+  margin: 0;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.datepicker > .row:first-child > div > div:first-child {
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.datepicker > .row:first-child > div > div:nth-child(2) {
+  padding-left: 0px;
+  padding-right: 0px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.datepicker > .row:first-child > div > div:last-child {
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.datepicker > .row:first-child > div > div:first-child:hover, .datepicker > .row:first-child > div > div:last-child:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.month-year {
+  font-weight: bold;
+}

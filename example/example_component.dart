@@ -4,10 +4,10 @@ import 'package:dart_bootstrap_datepicker/src/components/datepicker_component.da
 @Component(
   selector: 'example-component',
   templateUrl: 'example_component.html',
-  directives: const[DatePickerComponent]
+  directives: const[DatepickerComponent]
 )
 
 class ExampleComponent {
-  @ViewChild(DatePickerComponent) DatePickerComponent datePicker;
+  @ViewChild(DatepickerComponent) DatepickerComponent datePicker;
 
 }

@@ -1,8 +1,28 @@
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="yyyy-MM-dd" />
+<div id="{{componentId}}" class="input-group">
+  <input type="text" class="form-control" placeholder="yyyy-MM-dd" value="{{initialDate}}" />
   <span class="input-group-btn">
-    <button class="btn btn-default" type="button">
+    <button class="btn btn-default toggle-datepicker" type="button" (click)="toggleDatepicker()">
       <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
     </button>
   </span>
+</div>
+<div id="{{datepickerId}}" class="datepicker hide">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="col-sm-2">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </div>
+      <div class="col-sm-8">
+        <span class="month-year">December 2016</span>
+      </div>
+      <div class="col-sm-2">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+
+    </div>
+  </div>
 </div>
