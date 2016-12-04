@@ -6,6 +6,4 @@
 /// More dartdocs go here.
 library dart_bootstrap_datepicker;
 
-export 'src/dart_bootstrap_datepicker_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/components/datepicker_component.dart';
