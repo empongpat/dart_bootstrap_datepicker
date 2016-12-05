@@ -55,30 +55,6 @@
   font-weight: bold;
 }
 
-.day {
-  text-align: center;
-  display:inline-block;
-  width: 32px;
-  border-radius: 200px 200px 200px 200px;
-  -moz-border-radius: 200px 200px 200px 200px;
-  -webkit-border-radius: 200px 200px 200px 200px;
-  border: 0px solid #fff;
-}
-
-.day:hover {
-  cursor: pointer;
-  background-color: rgba(50, 123, 184, 0.4);
-}
-
-.day-selected {
-  color: white;
-  background-color: #337ab7;
-}
-
-.prev-month, .next-month {
-  color: #777;
-}
-
 .datepicker > .row:first-child > div > div:nth-child(2) {
   padding-left: 0px;
   padding-right: 0px;
