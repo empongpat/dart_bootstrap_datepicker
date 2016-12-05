@@ -9,13 +9,13 @@
 <div id="{{datepickerId}}" class="datepicker hide">
   <div class="row">
     <div class="col-sm-12">
-      <div class="col-sm-2" id="prev-month-button">
+      <div class="col-sm-2" id="prev-month-button" (click)="previousMonth()">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       </div>
       <div class="col-sm-8">
-        <span class="month-year">December 2016</span>
+        <span class="month-year">{{currentMonthName}} {{currentMonthYear.year.toString()}}</span>
       </div>
-      <div class="col-sm-2" id="next-month-button">
+      <div class="col-sm-2" id="next-month-button" (click)="nextMonth()">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       </div>
     </div>
@@ -47,68 +47,32 @@
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day day="27" month="11" year="2016" isPrevMonth="true"></day>
-      <day day="28" month="11" year="2016" isPrevMonth="true"></day>
-      <day day="29" month="11" year="2016" isPrevMonth="true"></day>
-      <day day="30" month="11" year="2016" isPrevMonth="true"></day>
-      <day day="1" month="12" year="2016"></day>
-      <day day="2" month="12" year="2016"></day>
-      <day day="3" month="12" year="2016"></day>
+      <day *ngFor="let date of firstRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()"></day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day day="4" month="12" year="2016"></day>
-      <day day="5" month="12" year="2016"></day>
-      <day day="6" month="12" year="2016"></day>
-      <day day="7" month="12" year="2016"></day>
-      <day day="8" month="12" year="2016"></day>
-      <day day="9" month="12" year="2016"></day>
-      <day day="10" month="12" year="2016"></day>
+      <day *ngFor="let date of secondRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()"></day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day day="11" month="12" year="2016"></day>
-      <day day="12" month="12" year="2016"></day>
-      <day day="13" month="12" year="2016"></day>
-      <day day="14" month="12" year="2016"></day>
-      <day day="15" month="12" year="2016"></day>
-      <day day="16" month="12" year="2016"></day>
-      <day day="17" month="12" year="2016"></day>
+      <day *ngFor="let date of thirdRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()"></day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day day="18" month="12" year="2016"></day>
-      <day day="19" month="12" year="2016"></day>
-      <day day="20" month="12" year="2016"></day>
-      <day day="21" month="12" year="2016"></day>
-      <day day="22" month="12" year="2016"></day>
-      <day day="23" month="12" year="2016"></day>
-      <day day="24" month="12" year="2016"></day>
+      <day *ngFor="let date of fourthRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()"></day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day day="25" month="12" year="2016"></day>
-      <day day="26" month="12" year="2016"></day>
-      <day day="27" month="12" year="2016"></day>
-      <day day="28" month="12" year="2016"></day>
-      <day day="29" month="12" year="2016"></day>
-      <day day="30" month="12" year="2016"></day>
-      <day day="31" month="12" year="2016"></day>
+      <day *ngFor="let date of fifthRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()"></day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day day="1" month="1" year="2017" isNextMonth="true"></day>
-      <day day="2" month="1" year="2017" isNextMonth="true"></day>
-      <day day="3" month="1" year="2017" isNextMonth="true"></day>
-      <day day="4" month="1" year="2017" isNextMonth="true"></day>
-      <day day="5" month="1" year="2017" isNextMonth="true"></day>
-      <day day="6" month="1" year="2017" isNextMonth="true"></day>
-      <day day="7" month="1" year="2017" isNextMonth="true"></day>
+      <day *ngFor="let date of sixthRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()"></day>
     </div>
   </div>
   <div class="row">
