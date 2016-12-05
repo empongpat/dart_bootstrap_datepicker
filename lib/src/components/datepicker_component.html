@@ -9,20 +9,204 @@
 <div id="{{datepickerId}}" class="datepicker hide">
   <div class="row">
     <div class="col-sm-12">
-      <div class="col-sm-2">
+      <div class="col-sm-2" id="prev-month-button">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       </div>
       <div class="col-sm-8">
         <span class="month-year">December 2016</span>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-2" id="next-month-button">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-12">
-
+    <div class="col-sm-12 days-row">
+      <div class="weekday">
+        <span>Su</span>
+      </div>
+      <div class="weekday">
+        <span>Mo</span>
+      </div>
+      <div class="weekday">
+        <span>Tu</span>
+      </div>
+      <div class="weekday">
+        <span>We</span>
+      </div>
+      <div class="weekday">
+        <span>Th</span>
+      </div>
+      <div class="weekday">
+        <span>Fr</span>
+      </div>
+      <div class="weekday">
+        <span>Sa</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 days-row">
+      <div class="day prev-month">
+        <span>27</span>
+      </div>
+      <div class="day prev-month">
+        <span>28</span>
+      </div>
+      <div class="day prev-month">
+        <span>29</span>
+      </div>
+      <div class="day prev-month">
+        <span>30</span>
+      </div>
+      <div class="day">
+        <span>1</span>
+      </div>
+      <div class="day">
+        <span>2</span>
+      </div>
+      <div class="day">
+        <span>3</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 days-row">
+      <div class="day">
+        <span>4</span>
+      </div>
+      <div class="day day-selected">
+        <span>5</span>
+      </div>
+      <div class="day">
+        <span>6</span>
+      </div>
+      <div class="day">
+        <span>7</span>
+      </div>
+      <div class="day">
+        <span>8</span>
+      </div>
+      <div class="day">
+        <span>9</span>
+      </div>
+      <div class="day">
+        <span>10</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 days-row">
+      <div class="day">
+        <span>11</span>
+      </div>
+      <div class="day">
+        <span>12</span>
+      </div>
+      <div class="day">
+        <span>13</span>
+      </div>
+      <div class="day">
+        <span>14</span>
+      </div>
+      <div class="day">
+        <span>15</span>
+      </div>
+      <div class="day">
+        <span>16</span>
+      </div>
+      <div class="day">
+        <span>17</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 days-row">
+      <div class="day">
+        <span>18</span>
+      </div>
+      <div class="day">
+        <span>19</span>
+      </div>
+      <div class="day">
+        <span>20</span>
+      </div>
+      <div class="day">
+        <span>21</span>
+      </div>
+      <div class="day">
+        <span>22</span>
+      </div>
+      <div class="day">
+        <span>23</span>
+      </div>
+      <div class="day">
+        <span>24</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 days-row">
+      <div class="day">
+        <span>25</span>
+      </div>
+      <div class="day">
+        <span>26</span>
+      </div>
+      <div class="day">
+        <span>27</span>
+      </div>
+      <div class="day">
+        <span>28</span>
+      </div>
+      <div class="day">
+        <span>29</span>
+      </div>
+      <div class="day">
+        <span>30</span>
+      </div>
+      <div class="day">
+        <span>31</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 days-row">
+      <div class="day next-month">
+        <span>1</span>
+      </div>
+      <div class="day next-month">
+        <span>2</span>
+      </div>
+      <div class="day next-month">
+        <span>3</span>
+      </div>
+      <div class="day next-month">
+        <span>4</span>
+      </div>
+      <div class="day next-month">
+        <span>5</span>
+      </div>
+      <div class="day next-month">
+        <span>6</span>
+      </div>
+      <div class="day next-month">
+        <span>7</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 days-row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-8">
+        <div class="col-sm-6">
+          <button class="btn btn-warning btn-sm" type="button">Reset</button>
+        </div>
+        <div class="col-sm-6">
+          <button class="btn btn-default btn-sm" type="button" (click)="hideDatepicker()">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

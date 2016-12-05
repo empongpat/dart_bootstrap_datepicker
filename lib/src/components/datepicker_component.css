@@ -18,11 +18,11 @@
   outline: none;
 }
 
-.datepicker > .row:first-child {
-  padding-top: 5px;
+.datepicker > .row {
   margin: 0;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-top: 5px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .datepicker > .row:first-child > div {
@@ -31,11 +31,52 @@
   padding-left: 5px;
 }
 
-.datepicker > .row:first-child > div > div:first-child {
-  padding-left: 0px;
-  padding-right: 0px;
-  font-size: 18px;
+.days-row {
+  margin: 0;
+  padding-left: 1px;
+  padding-right: 1px;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.days-row:hover {
+  cursor:default;
+}
+
+.weekday {
   text-align: center;
+  display:inline-block;
+  width: 32px;
+  font-weight: bold;
+}
+
+.day {
+  text-align: center;
+  display:inline-block;
+  width: 32px;
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 0px solid #fff;
+}
+
+.day:hover {
+  cursor: pointer;
+  background-color: rgba(50, 123, 184, 0.4);
+}
+
+.day-selected {
+  color: white;
+  background-color: #337ab7;
+}
+
+.prev-month, .next-month {
+  color: #777;
 }
 
 .datepicker > .row:first-child > div > div:nth-child(2) {
@@ -45,14 +86,21 @@
   text-align: center;
 }
 
-.datepicker > .row:first-child > div > div:last-child {
+#prev-month-button, #next-month-button {
   padding-left: 0px;
   padding-right: 0px;
   font-size: 18px;
   text-align: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 
-.datepicker > .row:first-child > div > div:first-child:hover, .datepicker > .row:first-child > div > div:last-child:hover {
+#prev-month-button:hover, #next-month-button:hover {
   background-color: #eee;
   cursor: pointer;
 }
