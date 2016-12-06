@@ -21,4 +21,3 @@ transformers:
     platform_pipes:
     - 'package:angular2/common.dart#COMMON_PIPES'
     entry_points: example/main.dart
-- dart_to_js_script_rewriter
