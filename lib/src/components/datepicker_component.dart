@@ -204,6 +204,12 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     selectedDate = currentDay.select();
     inputDate.value = dateFormat.format(currentDay.date);
     inputDate.focus();
+    if (currentDay.isPrevMonth) {
+      previousMonth();
+    }
+    if (currentDay.isNextMonth) {
+      nextMonth();
+    }
   }
 
   void previousMonth() {
