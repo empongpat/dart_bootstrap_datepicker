@@ -1,3 +1,7 @@
+.datepicker-input {
+  margin: 0;
+}
+
 .datepicker {
   height: 250px;
   width: 250px;
