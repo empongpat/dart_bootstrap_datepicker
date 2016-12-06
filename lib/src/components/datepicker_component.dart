@@ -29,7 +29,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   ElementRef _elementRef;
   Element hostElement;
 
-  @ViewChildren(DayComponent) List<DayComponent> dayList;
+  @ViewChildren(DayComponent) ObservableList<DayComponent> dayList;
 
   DatepickerComponent(this._elementRef);
 
@@ -55,6 +55,11 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     for (var day in dayList) {
       day.hostElement.onClick.listen((event) => dateClickListener(day, event));
     }
+    dayList.changes.listen((onData) {
+      for (var day in dayList) {
+        day.hostElement.onClick.listen((event) => dateClickListener(day, event));
+      }
+    });
   }
 
   List<DateTime> findDates() {
