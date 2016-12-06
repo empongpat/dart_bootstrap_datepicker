@@ -18,6 +18,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   String datepickerId;
   String initialDate;
   DateFormat dateFormat = new DateFormat("yyyy-MM-dd");
+  DateTime selectedDate;
   DateTime currentMonthYear;
   String currentMonthName;
   bool hidden = true;
@@ -37,6 +38,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   void ngOnInit() {
     datepickerId = componentId+"-datepicker";
     var now = new DateTime.now();
+    selectedDate = new DateTime(now.year, now.month, now.day);
     initialDate = dateFormat.format(now);
     currentMonthYear = new DateTime(now.year, now.month);
     currentMonthName = getMonthName(currentMonthYear.month);
@@ -192,7 +194,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
         break;
       }
     }
-    currentDay.select();
+    selectedDate = currentDay.select();
     inputDate.value = dateFormat.format(currentDay.date);
     inputDate.focus();
   }
@@ -224,6 +226,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   void resetDatepicker() {
     var now = new DateTime.now();
     inputDate.value = initialDate;
+    selectedDate = new DateTime(now.year, now.month, now.day);
     currentMonthYear = new DateTime(now.year, now.month);
     currentMonthName = getMonthName(currentMonthYear.month);
     dateList = findDates();

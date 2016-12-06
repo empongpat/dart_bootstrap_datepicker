@@ -20,7 +20,7 @@ class DayComponent implements AfterContentInit{
   Element hostElement;
 
   DateTime date;
-  bool isSelected = false;
+  @Input() bool isSelected = false;
 
   DayComponent(this._element);
 
@@ -34,10 +34,8 @@ class DayComponent implements AfterContentInit{
       hostElement.querySelector('div').classes.add("next-month");
     }
     date = new DateTime(int.parse(year), int.parse(month), int.parse(day));
-    var now = new DateTime.now();
-    if (date.isAtSameMomentAs(new DateTime(now.year, now.month, now.day))) {
+    if (isSelected) {
       hostElement.querySelector('div').classes.add("selected");
-      isSelected = true;
     }
   }
 
