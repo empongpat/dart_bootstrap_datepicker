@@ -221,6 +221,15 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     renderCalendarDates();
   }
 
+  void resetDatepicker() {
+    var now = new DateTime.now();
+    inputDate.value = initialDate;
+    currentMonthYear = new DateTime(now.year, now.month);
+    currentMonthName = getMonthName(currentMonthYear.month);
+    dateList = findDates();
+    renderCalendarDates();
+  }
+
   void toggleDatepicker() {
     if (hidden) {
       showDatepicker();
