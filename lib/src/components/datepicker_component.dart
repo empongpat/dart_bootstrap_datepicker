@@ -7,6 +7,7 @@ import 'day_component.dart';
 @Component(
   selector: 'datepicker',
   templateUrl: 'datepicker_component.html',
+  encapsulation: ViewEncapsulation.Native,
   styleUrls: const['datepicker_component.css'],
   directives: const[DayComponent]
 )
