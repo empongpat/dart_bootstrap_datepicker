@@ -8,11 +8,11 @@ Bootstrap Datepicker for Angular Dart developers.
 
 ## Motivation ##
 
-This package is not the port of Eonasdan's bootstrap-datetimepicker
+This package is not the port of [Eonasdan's bootstrap-datetimepicker][tracker]
 
-<https://github.com/Eonasdan/bootstrap-datetimepicker>, but we are
+[tracker]: https://github.com/Eonasdan/bootstrap-datetimepicker
 
-motivated to have something similar to this in Dart.
+, but we are motivated to have something similar to this in Dart.
 
 ## Prerequisites ##
 
