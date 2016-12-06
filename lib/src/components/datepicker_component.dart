@@ -20,6 +20,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   DateFormat dateFormat = new DateFormat("yyyy-MM-dd");
   DateTime selectedDate;
   DateTime currentMonthYear;
+  DateTime endOfCurrentMonthYear;
   String currentMonthName;
   bool hidden = true;
   InputElement inputDate;
@@ -41,6 +42,8 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     selectedDate = new DateTime(now.year, now.month, now.day);
     initialDate = dateFormat.format(now);
     currentMonthYear = new DateTime(now.year, now.month);
+    endOfCurrentMonthYear = new DateTime(
+      currentMonthYear.year, currentMonthYear.month, findMaximumDaysInMonth(currentMonthYear.year, currentMonthYear.month));
     currentMonthName = getMonthName(currentMonthYear.month);
     dateList = findDates();
     renderCalendarDates();
@@ -206,6 +209,8 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     } else {
       currentMonthYear = new DateTime(currentMonthYear.year-1, 12);
     }
+    endOfCurrentMonthYear = new DateTime(
+      currentMonthYear.year, currentMonthYear.month, findMaximumDaysInMonth(currentMonthYear.year, currentMonthYear.month));
     currentMonthName = getMonthName(currentMonthYear.month);
     dateList = findDates();
     renderCalendarDates();
@@ -218,6 +223,8 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     } else {
       currentMonthYear = new DateTime(currentMonthYear.year, currentMonthYear.month+1);
     }
+    endOfCurrentMonthYear = new DateTime(
+      currentMonthYear.year, currentMonthYear.month, findMaximumDaysInMonth(currentMonthYear.year, currentMonthYear.month));
     currentMonthName = getMonthName(currentMonthYear.month);
     dateList = findDates();
     renderCalendarDates();
@@ -228,6 +235,8 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     inputDate.value = initialDate;
     selectedDate = new DateTime(now.year, now.month, now.day);
     currentMonthYear = new DateTime(now.year, now.month);
+    endOfCurrentMonthYear = new DateTime(
+      currentMonthYear.year, currentMonthYear.month, findMaximumDaysInMonth(currentMonthYear.year, currentMonthYear.month));
     currentMonthName = getMonthName(currentMonthYear.month);
     dateList = findDates();
     renderCalendarDates();

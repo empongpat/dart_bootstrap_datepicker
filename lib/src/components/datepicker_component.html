@@ -47,32 +47,56 @@
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day *ngFor="let date of firstRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"></day>
+      <day *ngFor="let date of firstRowDateList"
+        [day]="date.day.toString()" [month]="date.month.toString()"
+        [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"
+        [isPrevMonth]="date.isBefore(currentMonthYear)" [isNextMonth]="date.isAfter(endOfCurrentMonthYear)">
+      </day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day *ngFor="let date of secondRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"></day>
+      <day *ngFor="let date of secondRowDateList"
+        [day]="date.day.toString()" [month]="date.month.toString()"
+        [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"
+        [isPrevMonth]="date.isBefore(currentMonthYear)" [isNextMonth]="date.isAfter(endOfCurrentMonthYear)">
+      </day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day *ngFor="let date of thirdRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"></day>
+      <day *ngFor="let date of thirdRowDateList"
+        [day]="date.day.toString()" [month]="date.month.toString()"
+        [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"
+        [isPrevMonth]="date.isBefore(currentMonthYear)" [isNextMonth]="date.isAfter(endOfCurrentMonthYear)">
+      </day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day *ngFor="let date of fourthRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"></day>
+      <day *ngFor="let date of fourthRowDateList"
+        [day]="date.day.toString()" [month]="date.month.toString()"
+        [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"
+        [isPrevMonth]="date.isBefore(currentMonthYear)" [isNextMonth]="date.isAfter(endOfCurrentMonthYear)">
+      </day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day *ngFor="let date of fifthRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"></day>
+      <day *ngFor="let date of fifthRowDateList"
+        [day]="date.day.toString()" [month]="date.month.toString()"
+        [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"
+        [isPrevMonth]="date.isBefore(currentMonthYear)" [isNextMonth]="date.isAfter(endOfCurrentMonthYear)">
+      </day>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 days-row">
-      <day *ngFor="let date of sixthRowDateList" [day]="date.day.toString()" [month]="date.month.toString()" [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"></day>
+      <day *ngFor="let date of sixthRowDateList"
+        [day]="date.day.toString()" [month]="date.month.toString()"
+        [year]="date.year.toString()" [isSelected]="date.isAtSameMomentAs(selectedDate)"
+        [isPrevMonth]="date.isBefore(currentMonthYear)" [isNextMonth]="date.isAfter(endOfCurrentMonthYear)">
+      </day>
     </div>
   </div>
   <div class="row">

@@ -18,6 +18,6 @@
   background-color: #337ab7;
 }
 
-.prev-month, .next-month {
+.prev-month:not(.selected), .next-month:not(.selected) {
   color: #777;
 }

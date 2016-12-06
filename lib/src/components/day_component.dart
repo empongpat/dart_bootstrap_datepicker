@@ -13,27 +13,27 @@ class DayComponent implements AfterContentInit{
   @Input() String month;
   @Input() String year;
 
-  @Input() String isPrevMonth = "false";
-  @Input() String isNextMonth = "false";
+  @Input() bool isSelected = false;
+  @Input() bool isPrevMonth = false;
+  @Input() bool isNextMonth = false;
 
   ElementRef _element;
   Element hostElement;
 
   DateTime date;
-  @Input() bool isSelected = false;
 
   DayComponent(this._element);
 
   @override
   void ngAfterContentInit() {
     hostElement = _element.nativeElement;
-    if (isPrevMonth == "true") {
+    date = new DateTime(int.parse(year), int.parse(month), int.parse(day));
+    if (isPrevMonth) {
       hostElement.querySelector('div').classes.add("prev-month");
     }
-    if (isNextMonth == "true") {
+    if (isNextMonth) {
       hostElement.querySelector('div').classes.add("next-month");
     }
-    date = new DateTime(int.parse(year), int.parse(month), int.parse(day));
     if (isSelected) {
       hostElement.querySelector('div').classes.add("selected");
     }
