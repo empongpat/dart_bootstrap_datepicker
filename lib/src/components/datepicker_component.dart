@@ -14,9 +14,9 @@ import 'day_component.dart';
 class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
 
   @Input() String componentId;
+  @Input() String initialDate;
 
   String datepickerId;
-  String initialDate;
   DateFormat dateFormat = new DateFormat("yyyy-MM-dd");
   DateTime selectedDate;
   DateTime currentMonthYear;
@@ -39,9 +39,13 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   void ngOnInit() {
     datepickerId = componentId+"-datepicker";
     var now = new DateTime.now();
-    selectedDate = new DateTime(now.year, now.month, now.day);
-    initialDate = dateFormat.format(now);
-    currentMonthYear = new DateTime(now.year, now.month);
+    if (initialDate == null) {
+      selectedDate = new DateTime(now.year, now.month, now.day);
+      initialDate = dateFormat.format(now);
+    } else {
+      selectedDate = DateTime.parse(initialDate);
+    }
+    currentMonthYear = new DateTime(selectedDate.year, selectedDate.month);
     endOfCurrentMonthYear = new DateTime(
       currentMonthYear.year, currentMonthYear.month, findMaximumDaysInMonth(currentMonthYear.year, currentMonthYear.month));
     currentMonthName = getMonthName(currentMonthYear.month);
