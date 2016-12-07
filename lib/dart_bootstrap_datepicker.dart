@@ -6,5 +6,5 @@
 /// More dartdocs go here.
 library dart_bootstrap_datepicker;
 
-export 'src/components/datepicker_component.dart';
-export 'src/components/interval/datepicker_interval_component.dart';
+export 'package:dart_bootstrap_datepicker/src/components/datepicker_component.dart';
+export 'package:dart_bootstrap_datepicker/src/components/interval/datepicker_interval_component.dart';
