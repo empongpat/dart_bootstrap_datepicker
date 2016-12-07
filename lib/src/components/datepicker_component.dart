@@ -159,4 +159,8 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     hidden = true;
   }
 
+  DateTime getSelectedDate() {
+    return selectedDate;
+  }
+
 }

@@ -58,6 +58,9 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
         DateUtility.findMaximumDaysInMonth(selectedStartDate.year, selectedStartDate.month)));
       initialStartDate = dateFormat.format(selectedStartDate);
       initialEndDate = dateFormat.format(selectedEndDate);
+    } else {
+      selectedStartDate = DateTime.parse(initialStartDate);
+      selectedEndDate = DateTime.parse(initialEndDate);
     }
     currentStartMonthYear = new DateTime(selectedStartDate.year, selectedStartDate.month);
     currentEndMonthYear = new DateTime(selectedEndDate.year, selectedEndDate.month);
@@ -234,6 +237,14 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
   void hideDatepicker() {
     hostElement.querySelector("#$datepickerId").classes.add("hide");
     hidden = true;
+  }
+
+  DateTime getSelectedStartDate() {
+    return selectedStartDate;
+  }
+
+  DateTime getSelectedEndDate() {
+    return selectedEndDate;
   }
 
 }
