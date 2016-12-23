@@ -228,6 +228,18 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
 
   void toggleDatepicker() {
     if (hostElement.querySelector("#$datepickerId").classes.contains("hide")) {
+      try {
+        selectedStartDate = DateTime.parse(inputDateInterval.value.substring(0, inputDateInterval.value.indexOf(" ")));
+        selectedEndDate = DateTime.parse(inputDateInterval.value.substring(inputDateInterval.value.lastIndexOf(" ")+1));
+        document.getElementById(componentId).classes.remove("has-error");
+        currentStartMonthYear = new DateTime(selectedStartDate.year, selectedStartDate.month);
+        currentEndMonthYear = new DateTime(selectedEndDate.year, selectedEndDate.month);
+        refreshStartDatepicker();
+        refreshEndDatepicker();
+      } catch(e) {
+        inputDateInterval.value = "";
+        document.getElementById(componentId).classes.add("has-error");
+      }
       showDatepicker();
     } else {
       hideDatepicker();

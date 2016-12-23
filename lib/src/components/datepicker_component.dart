@@ -148,6 +148,15 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
 
   void toggleDatepicker() {
     if (hostElement.querySelector("#$datepickerId").classes.contains("hide")) {
+      try {
+        selectedDate = DateTime.parse(inputDate.value);
+        document.getElementById(componentId).classes.remove("has-error");
+        currentMonthYear = new DateTime(selectedDate.year, selectedDate.month);
+        refreshDatepicker();
+      } catch(e) {
+        inputDate.value = "";
+        document.getElementById(componentId).classes.add("has-error");
+      }
       showDatepicker();
     } else {
       hideDatepicker();
