@@ -24,7 +24,6 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   DateTime currentMonthYear;
   DateTime endOfCurrentMonthYear;
   String currentMonthName;
-  bool hidden = true;
   InputElement inputDate;
   List<DateTime> dateList;
   ObservableList<DateTime> firstRowDateList, secondRowDateList, thirdRowDateList,
@@ -67,6 +66,14 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
         day.hostElement.onClick.listen((event) => _dateClickListener(day, event));
       }
     });
+    hostElement.onMouseDown.listen((event) {
+      if (!((event.target as Element).matches('input'))) {
+        event.preventDefault();
+      }
+    });
+    inputDate.onBlur.listen((event) {
+      hideDatepicker();
+    });
   }
 
   void _renderCalendarDates() {
@@ -95,7 +102,6 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     }
     selectedDate = currentDay.select();
     inputDate.value = dateFormat.format(currentDay.date);
-    inputDate.focus();
     if (currentDay.isPrevMonth) {
       previousMonth();
     }
@@ -141,7 +147,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   }
 
   void toggleDatepicker() {
-    if (hidden) {
+    if (hostElement.querySelector("#$datepickerId").classes.contains("hide")) {
       showDatepicker();
     } else {
       hideDatepicker();
@@ -150,13 +156,12 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
 
   void showDatepicker() {
     hostElement.querySelector("#$datepickerId").classes.remove("hide");
-    hidden = false;
     inputDate.focus();
   }
 
   void hideDatepicker() {
     hostElement.querySelector("#$datepickerId").classes.add("hide");
-    hidden = true;
+    inputDate.blur();
   }
 
   DateTime getSelectedDate() {
