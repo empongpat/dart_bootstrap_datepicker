@@ -29,7 +29,6 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
   DateTime endOfCurrentEndMonthYear;
   String currentStartMonthName;
   String currentEndMonthName;
-  bool hidden = true;
   InputElement inputDateInterval;
   List<DateTime> startDateList;
   List<DateTime> endDateList;
@@ -92,6 +91,14 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
         day.hostElement.onClick.listen((event) => _endDateClickListener(day, event));
       }
     });
+    hostElement.onMouseDown.listen((event) {
+      if (!((event.target as Element).matches('input'))) {
+        event.preventDefault();
+      }
+    });
+    inputDateInterval.onBlur.listen((event) {
+      hideDatepicker();
+    });
   }
 
   void _startDateClickListener(DayComponent currentDay, Event event) {
@@ -103,7 +110,6 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
     }
     selectedStartDate = currentDay.select();
     inputDateInterval.value = dateFormat.format(currentDay.date)+" - "+dateFormat.format(selectedEndDate);
-    inputDateInterval.focus();
     if (currentDay.isPrevMonth) {
       previousStartMonth();
     }
@@ -221,7 +227,19 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
   }
 
   void toggleDatepicker() {
-    if (hidden) {
+    if (hostElement.querySelector("#$datepickerId").classes.contains("hide")) {
+      try {
+        selectedStartDate = DateTime.parse(inputDateInterval.value.substring(0, inputDateInterval.value.indexOf(" ")));
+        selectedEndDate = DateTime.parse(inputDateInterval.value.substring(inputDateInterval.value.lastIndexOf(" ")+1));
+        document.getElementById(componentId).classes.remove("has-error");
+        currentStartMonthYear = new DateTime(selectedStartDate.year, selectedStartDate.month);
+        currentEndMonthYear = new DateTime(selectedEndDate.year, selectedEndDate.month);
+        refreshStartDatepicker();
+        refreshEndDatepicker();
+      } catch(e) {
+        inputDateInterval.value = "";
+        document.getElementById(componentId).classes.add("has-error");
+      }
       showDatepicker();
     } else {
       hideDatepicker();
@@ -230,13 +248,12 @@ class DatepickerIntervalComponent implements OnInit, AfterContentInit, AfterView
 
   void showDatepicker() {
     hostElement.querySelector("#$datepickerId").classes.remove("hide");
-    hidden = false;
     inputDateInterval.focus();
   }
 
   void hideDatepicker() {
     hostElement.querySelector("#$datepickerId").classes.add("hide");
-    hidden = true;
+    inputDateInterval.blur();
   }
 
   DateTime getSelectedStartDate() {
