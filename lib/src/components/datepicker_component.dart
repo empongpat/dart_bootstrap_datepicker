@@ -17,7 +17,9 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
 
   @Input() String componentId;
   @Input() String initialDate;
+  @Input() String format;		
 
+  ///String defaultDateFormat = "yyyy-MM-dd";
   String datepickerId;
   DateFormat dateFormat = new DateFormat("yyyy-MM-dd");
   DateTime selectedDate;
@@ -40,6 +42,13 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   void ngOnInit() {
     datepickerId = componentId+"-datepicker";
     var now = new DateTime.now();
+    if (format != null) {
+	try {
+    	    dateFormat = new DateFormat(format);
+	} on FormatException {
+    	    dateFormat = new DateFormat("yyyy-MM-dd");
+	}
+    }
     if (initialDate == null) {
       selectedDate = new DateTime(now.year, now.month, now.day);
       initialDate = dateFormat.format(now);
