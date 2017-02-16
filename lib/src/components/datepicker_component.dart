@@ -17,7 +17,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
 
   @Input() String componentId;
   @Input() String initialDate;
-  @Input() String format;		
+  @Input() String format;
 
   ///String defaultDateFormat = "yyyy-MM-dd";
   String datepickerId;
@@ -43,17 +43,19 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
     datepickerId = componentId+"-datepicker";
     var now = new DateTime.now();
     if (format != null) {
-	try {
-    	    dateFormat = new DateFormat(format);
-	} on FormatException {
-    	    dateFormat = new DateFormat("yyyy-MM-dd");
-	}
+    	try {
+  	    dateFormat = new DateFormat(format);
+    	} on FormatException {
+  	    dateFormat = new DateFormat("yyyy-MM-dd");
+    	}
+    } else {
+      format = "yyyy-MM-dd";
     }
     if (initialDate == null) {
       selectedDate = new DateTime(now.year, now.month, now.day);
       initialDate = dateFormat.format(now);
     } else {
-      selectedDate = DateTime.parse(initialDate);
+      selectedDate = dateFormat.parse(initialDate);
     }
     currentMonthYear = new DateTime(selectedDate.year, selectedDate.month);
     refreshDatepicker();
@@ -158,7 +160,7 @@ class DatepickerComponent implements OnInit, AfterContentInit, AfterViewInit{
   void toggleDatepicker() {
     if (hostElement.querySelector("#$datepickerId").classes.contains("hide")) {
       try {
-        selectedDate = DateTime.parse(inputDate.value);
+        selectedDate = dateFormat.parse(inputDate.value);
         document.getElementById(componentId).classes.remove("has-error");
         currentMonthYear = new DateTime(selectedDate.year, selectedDate.month);
         refreshDatepicker();
