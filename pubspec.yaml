@@ -1,6 +1,6 @@
 name: dart_bootstrap_datepicker
 description: Bootstrap Datepicker for Angular Dart developers.
-version: 0.0.1
+version: 0.1.0
 #author: Pongpat Weesommai <empongpat@gmail.com>
 #homepage: https://github.com/shinzenkoru/dart_bootstrap_datepicker
 
@@ -8,7 +8,7 @@ environment:
   sdk: '>=1.19.0 <2.0.0'
 
 dependencies:
-  angular2: 2.0.0
+  angular2: '>=2.2.0 < 3.0.0'
 
 dev_dependencies:
   browser: ^0.10.0
